@@ -81,7 +81,7 @@ def setup(target_dir, platform):
     depot_tools_dir = os.path.join(target_dir, 'depot_tools')
     if not os.path.isdir(depot_tools_dir):
         print('Fetching Chromium depot_tools...')
-        sh('git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git')
+        sh('git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git -v')
 
     # Prepare environment
     env = os.environ.copy()
@@ -238,4 +238,3 @@ if __name__ == "__main__":
         build(target_dir, platform, args.debug, args.bitcode)
         print('WebRTC build for %s completed in %s' % (platform, target_dir))
         sys.exit(0)
-
